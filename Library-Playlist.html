@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library - Playlists</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #d1b3ff;
+      --secondary-bg: #f2e6ff;
+      --accent-color: #76ff76;
+      --text-dark: #1e1e1e;
+      --text-light: #f8f9fa;
+    }
+    
+    body {
+      background-color: var(--primary-bg);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding-bottom: 30px;
+    }
+
+    /* Header */
+    .library-header {
+      background-color: var(--secondary-bg);
+      padding: 15px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .library-title {
+      font-weight: 700;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    
+    .search-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .search-bar {
+      min-width: 200px;
+      max-width: 400px;
+      flex: 1;
+    }
+    
+    .home-btn {
+      color: var(--text-dark);
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+    
+    .home-btn:hover {
+      color: #4b0082;
+    }
+
+    /* Navigation Tabs */
+    .library-nav {
+      padding: 15px 25px 0;
+      display: flex;
+      gap: 10px;
+      border-bottom: 2px solid var(--secondary-bg);
+    }
+    
+    .library-nav .btn {
+      border-radius: 20px;
+      font-weight: 600;
+      padding: 8px 20px;
+      border: none;
+    }
+    
+    .library-nav .active {
+      background-color: var(--accent-color);
+      color: var(--text-dark);
+    }
+
+    /* Playlist List */
+    .playlist-container {
+      padding: 15px 25px;
+    }
+    
+    .playlist-card {
+      background-color: var(--secondary-bg);
+      border-radius: 12px;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+    
+    .playlist-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .playlist-cover {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 2px solid white;
+    }
+    
+    .playlist-info {
+      flex: 1;
+    }
+    
+    .playlist-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .playlist-creator {
+      color: #6b4caf;
+      font-size: 0.9rem;
+    }
+    
+    .playlist-date {
+      color: #666;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .library-header {
+        padding: 15px;
+      }
+      
+      .playlist-container {
+        padding: 15px;
+      }
+      
+      .playlist-card {
+        padding: 10px 12px;
+      }
+      
+      .playlist-cover {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .search-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .search-bar {
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      .playlist-date {
+        display: none;
+      }
+      
+      .playlist-creator {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header with Search -->
+<div class="library-header">
+  <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <h1 class="library-title">Library</h1>
+    
+    <div class="search-container">
+      <input type="text" class="form-control search-bar" placeholder="Search songs, artists...">
+      <input type="text" class="form-control search-bar" placeholder="Search for playlists">
+      <a href="Homepage.html" class="home-btn"><i class="bi bi-house-fill"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation Tabs -->
+<div class="library-nav">
+  <button class="btn active">Playlists</button>
+  <button class="btn btn-light" onclick="location.href='Library-Artist.html'">Artists</button>
+</div>
+
+<!-- Playlist List -->
+<div class="playlist-container">
+  <div class="playlist-card">
+    <img src="IMG/bling bang bang.jpg" class="playlist-cover" alt="Random 1">
+    <div class="playlist-info">
+      <div class="playlist-name">Random 1</div>
+      <div class="playlist-creator">Oracle</div>
+    </div>
+    <div class="playlist-date">January-10-2025</div>
+  </div>
+  
+  <div class="playlist-card">
+    <img src="IMG/seventeenth.jpg" class="playlist-cover" alt="Random 2">
+    <div class="playlist-info">
+      <div class="playlist-name">Random 2</div>
+      <div class="playlist-creator">Oracle</div>
+    </div>
+    <div class="playlist-date">December-19-2024</div>
+  </div>
+  
+  <div class="playlist-card">
+    <img src="IMG/mouiiyo.jpg" class="playlist-cover" alt="Random 3">
+    <div class="playlist-info">
+      <div class="playlist-name">Random 3</div>
+      <div class="playlist-creator">Oracle</div>
+    </div>
+    <div class="playlist-date">August-17-2024</div>
+  </div>
+  
+  <div class="playlist-card">
+    <img src="IMG/download (6).jpg" class="playlist-cover" alt="Random 4">
+    <div class="playlist-info">
+      <div class="playlist-name">Random 4</div>
+      <div class="playlist-creator">Oracle</div>
+    </div>
+    <div class="playlist-date">August-15-2024</div>
+  </div>
+  
+  <div class="playlist-card">
+    <img src="IMG/download (7).jpg" class="playlist-cover" alt="Random 5">
+    <div class="playlist-info">
+      <div class="playlist-name">Random 5</div>
+      <div class="playlist-creator">Oracle</div>
+    </div>
+    <div class="playlist-date">March-8-2024</div>
+  </div>
+  
+  <div class="playlist-card">
+    <img src="IMG/last.jpg" class="playlist-cover" alt="Random 6">
+    <div class="playlist-info">
+      <div class="playlist-name">Random 6</div>
+      <div class="playlist-creator">Oracle</div>
+    </div>
+    <div class="playlist-date">November-20-2023</div>
+  </div>
+</div>
+
+</body>
+</html>
